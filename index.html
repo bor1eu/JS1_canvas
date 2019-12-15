@@ -2,45 +2,40 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>ABOBE PHOTOZHAB</title>
-	<style type="text/css">
-		#canv {
-			width: 1000px; 
-			height: 800px; 
-			border: 1px solid black
-		}
-	</style>
+	<title>Image tool</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="head"></div>
-
-
-	<div class="canv">
-		<canvas id="canv" width="1000" height="800"></canvas> 
-	</div>
-
+	<div class="head">Image tool</div>
 	<div class="tools">
 		<div class="coordinates">
 			<p id="x"><b>x: </b> <span id="x-coord"></span></p>
 			<p id="y"><b>y: </b> <span id="y-coord"></span></p>
-			<br>
 		</div>
 
-		<button name="tool-button" data-name='brush'>Brush</button>
-		<button name="tool-button" data-name='notbrush'>NotBrush</button>
-		<button name="tool-button" data-name='notbrush2'>NotBrush 2</button>
+		<button name="tool-button" data-name='brush' class="tools-btn brush selected"></button>
+		<button name="tool-button" data-name='rect' class="tools-btn rect "></button>
+		<button name="tool-button" data-name='circle' class="tools-btn circle "></button>
+		<button name="tool-button" data-name='line' class="tools-btn line "></button>
 
-		<select id='select-size'>
-			<option>5</option>
-			<option>10</option>
-			<option>15</option>
-			<option>20</option>
-		</select>
-
-		<input type="color" id="select-color">
+		<label>Width:
+			<select id='select-brush-size' class="tools-width">
+				<option>5</option>
+				<option>10</option>
+				<option>15</option>
+				<option>20</option>
+			</select>	
+		</label>
+		<label>Fill color:
+			<input type="color" id="select-fill-color" class="tools-color">
+		</label>
+		<label>Line color:
+			<input type="color" id="select-line-color" class="tools-color">
+		</label>
 	</div>
-
-
-	<script src="script.js"></script>
+	<div class="canv">
+		<canvas id="canv" width="800" height="600"></canvas> 
+	</div>
+	<script src="js/script.js"></script>
 </body>
 </html>
